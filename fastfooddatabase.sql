@@ -151,21 +151,21 @@ INSERT INTO `employee_has_shift` (`employee_id`, `shift_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Table structure for table `invoice`
 --
 
-CREATE TABLE `order` (
-  `order_id` int(11) NOT NULL,
-  `order_time` datetime NOT NULL,
+CREATE TABLE `invoice` (
+  `invoice_id` int(11) NOT NULL,
+  `invoice_time` datetime NOT NULL,
   `employee_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `order`
+-- Dumping data for table `invoice`
 --
 
-INSERT INTO `order` (`order_id`, `order_time`, `employee_id`, `customer_id`) VALUES
+INSERT INTO `invoice` (`invoice_id`, `invoice_time`, `employee_id`, `customer_id`) VALUES
 (1, '2016-10-11 05:36:11', 1, 2),
 (2, '2016-10-21 08:05:29', 2, 4),
 (3, '2016-10-22 16:21:25', 2, 3),
@@ -173,22 +173,21 @@ INSERT INTO `order` (`order_id`, `order_time`, `employee_id`, `customer_id`) VAL
 (5, '2016-10-31 12:23:23', 4, 3);
 
 -- --------------------------------------------------------
-
 --
--- Table structure for table `order_has_product`
+-- Table structure for table `invoice_has_product`
 --
 
-CREATE TABLE `order_has_product` (
-  `order_id` int(11) NOT NULL,
+CREATE TABLE `invoice_has_product` (
+  `invoice_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `order_has_product`
+-- Dumping data for table `invoice_has_product`
 --
 
-INSERT INTO `order_has_product` (`order_id`, `product_id`, `product_quantity`) VALUES
+INSERT INTO `invoice_has_product` (`invoice_id`, `product_id`, `product_quantity`) VALUES
 (1, 1, 2),
 (1, 2, 3),
 (2, 5, 56),
@@ -201,10 +200,10 @@ INSERT INTO `order_has_product` (`order_id`, `product_id`, `product_quantity`) V
 (5, 5, 45);
 
 --
--- Triggers `order_has_product`
+-- Triggers `invoice_has_product`
 --
 DELIMITER $$
-CREATE TRIGGER `order_has_product_trigger` BEFORE UPDATE ON `order_has_product` FOR EACH ROW BEGIN
+CREATE TRIGGER `invoice_has_product_trigger` BEFORE UPDATE ON `invoice_has_product` FOR EACH ROW BEGIN
 IF product_quantity <= 0 THEN SET
 NEW.product_quantity = 10;
 END IF;
@@ -404,21 +403,21 @@ ALTER TABLE `employee_has_shift`
   ADD KEY `fk_Employee_has_shift_Employee1_idx` (`employee_id`);
 
 --
--- Indexes for table `order`
+-- Indexes for table `invoice`
 --
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`order_id`),
-  ADD UNIQUE KEY `order_id_UNIQUE` (`order_id`),
-  ADD KEY `fk_Order_Employee1_idx` (`employee_id`),
-  ADD KEY `fk_Order_Customer1_idx` (`customer_id`);
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`invoice_id`),
+  ADD UNIQUE KEY `invoice_id_UNIQUE` (`invoice_id`),
+  ADD KEY `fk_invoice_Employee1_idx` (`employee_id`),
+  ADD KEY `fk_invoice_Customer1_idx` (`customer_id`);
 
 --
--- Indexes for table `order_has_product`
+-- Indexes for table `invoice_has_product`
 --
-ALTER TABLE `order_has_product`
-  ADD PRIMARY KEY (`order_id`,`product_id`),
-  ADD KEY `fk_Order_has_Product_Product1_idx` (`product_id`),
-  ADD KEY `fk_Order_has_Product_Order_idx` (`order_id`);
+ALTER TABLE `invoice_has_product`
+  ADD PRIMARY KEY (`invoice_id`,`product_id`),
+  ADD KEY `fk_invoice_has_Product_Product1_idx` (`product_id`),
+  ADD KEY `fk_invoice_has_Product_invoice_idx` (`invoice_id`);
 
 --
 -- Indexes for table `person`
@@ -482,10 +481,10 @@ ALTER TABLE `email`
 ALTER TABLE `employee`
   MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `invoice`
 --
-ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `invoice`
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `person`
 --
@@ -548,18 +547,18 @@ ALTER TABLE `employee_has_shift`
   ADD CONSTRAINT `fk_Employee_has_shift_shift1` FOREIGN KEY (`shift_id`) REFERENCES `shift` (`shift_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `order`
+-- Constraints for table `invoice`
 --
-ALTER TABLE `order`
-  ADD CONSTRAINT `fk_Order_Customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Order_Employee1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `invoice`
+  ADD CONSTRAINT `fk_invoice_Customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_invoice_Employee1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `order_has_product`
+-- Constraints for table `invoice_has_product`
 --
-ALTER TABLE `order_has_product`
-  ADD CONSTRAINT `fk_Order_has_Product_Order` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Order_has_Product_Product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `invoice_has_product`
+  ADD CONSTRAINT `fk_invoice_has_Product_invoice` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`invoice_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_invoice_has_Product_Product1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `phone`
