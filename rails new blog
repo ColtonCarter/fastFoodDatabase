@@ -1,0 +1,22 @@
+rails new blog
+
+cd blog
+
+rails server
+
+rails generate controller Welcome index
+
+#Open the app/views/welcome/index.html.erb file in your text editor. Delete all of the existing code in the file, and replace it with the following single line of code:
+
+<h1>Hello, Rails!</h1>
+
+#Open the file config/routes.rb in your editor.
+
+Rails.application.routes.draw do
+  get 'welcome/index'
+ 
+  root 'welcome#index'
+end
+
+
+
