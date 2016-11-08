@@ -1,0 +1,35 @@
+ rails generate scaffold customer customer_id:integer person_id:integer
+
+ rails generate scaffold email email_id:integer email_name:string 
+ email_domain:string person_id:integer
+
+ rails generate scaffold employee employee_id:integer date_hired:date
+ wage:decimal person_id:integer postion_id:integer status_id:integer
+
+ rails generate scaffold employee_has_shift employee_id:integer shift_id:integer
+
+ rails generate scaffold invoice invoice_id:integer invoice_time:datetime employee_id:integer customer_id:integer
+
+ rails generate scaffold invoice_has_product invoice_id:integer product_id:integer product_quantity:integer
+
+ rails generate scaffold person person_id:integer person_first_name:string person_last_name:string
+
+ rails generate scaffold phone phone_id:integer phone_area_code:string phone_telephone_exchange:string phone_assigned_number:string person_id:integer
+
+ rails generate scaffold position position_id:integer position_name:string
+
+ rails generate scaffold product product_id:integer product_name:string product_description:string product_price:decimal
+
+ rails generate scaffold shift shift_id:integer shift_time:string
+
+ rails generate scaffold status status_id:integer status_type:string
+
+
+
+
+
+
+
+
+
+
