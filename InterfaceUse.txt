@@ -1,0 +1,15 @@
+Application.html.erb –
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+User/manager
+	Create person, phone, email, order, order has product, customer
+       edit person, phone, email
+       read – person, orders, procuct
+Admin
+	Create – Email, phone, position, person, employee, status, customer, order, employee has shift, shift, oeder has product, product
+Read - Email, phone, position, person, employee, status, customer, order, employee has shift, shift, oeder has product, product
+	Edit - Email, phone, position, person, employee, status, customer, order, employee has shift, shift, oeder has product, product
+	Delete - Email, phone, position, person, employee, status, customer, order, employee has shift, shift, oeder has product, product
+Report
+	Read – persons, employees,  orders, products
