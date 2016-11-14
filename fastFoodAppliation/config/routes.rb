@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
    root 'welcome#index'
 =======
   resources :statuses
