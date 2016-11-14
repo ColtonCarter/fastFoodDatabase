@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_id: 1
+  date_hired: 2016-11-14
+  wage: 9.99
+  person_id: 1
+  postion_id: 1
+  status_id: 1
+
+two:
+  employee_id: 1
+  date_hired: 2016-11-14
+  wage: 9.99
+  person_id: 1
+  postion_id: 1
+  status_id: 1

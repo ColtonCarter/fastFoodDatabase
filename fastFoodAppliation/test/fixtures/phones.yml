@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone_id: 1
+  phone_area_code: MyString
+  phone_telephone_exchange: MyString
+  phone_assigned_number: MyString
+  person_id: 1
+
+two:
+  phone_id: 1
+  phone_area_code: MyString
+  phone_telephone_exchange: MyString
+  phone_assigned_number: MyString
+  person_id: 1

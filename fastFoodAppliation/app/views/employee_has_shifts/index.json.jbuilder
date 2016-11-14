@@ -1,0 +1,1 @@
+json.array! @employee_has_shifts, partial: 'employee_has_shifts/employee_has_shift', as: :employee_has_shift

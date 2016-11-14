@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice_id: 1
+  invoice_time: 2016-11-14 15:12:23
+  employee_id: 1
+  customer_id: 1
+
+two:
+  invoice_id: 1
+  invoice_time: 2016-11-14 15:12:23
+  employee_id: 1
+  customer_id: 1

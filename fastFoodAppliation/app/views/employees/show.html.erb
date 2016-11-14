@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @employee.employee_id %>
+</p>
+
+<p>
+  <strong>Date hired:</strong>
+  <%= @employee.date_hired %>
+</p>
+
+<p>
+  <strong>Wage:</strong>
+  <%= @employee.wage %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @employee.person_id %>
+</p>
+
+<p>
+  <strong>Postion:</strong>
+  <%= @employee.postion_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @employee.status_id %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @phone.phone_id %>
+</p>
+
+<p>
+  <strong>Phone area code:</strong>
+  <%= @phone.phone_area_code %>
+</p>
+
+<p>
+  <strong>Phone telephone exchange:</strong>
+  <%= @phone.phone_telephone_exchange %>
+</p>
+
+<p>
+  <strong>Phone assigned number:</strong>
+  <%= @phone.phone_assigned_number %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @phone.person_id %>
+</p>
+
+<%= link_to 'Edit', edit_phone_path(@phone) %> |
+<%= link_to 'Back', phones_path %>

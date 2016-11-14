@@ -1,0 +1,1 @@
+json.partial! "employee_has_shifts/employee_has_shift", employee_has_shift: @employee_has_shift

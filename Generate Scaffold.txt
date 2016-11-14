@@ -1,10 +1,8 @@
  rails generate scaffold customer customer_id:integer person_id:integer
 
- rails generate scaffold email email_id:integer email_name:string 
- email_domain:string person_id:integer
+ rails generate scaffold email email_id:integer email_name:string email_domain:string person_id:integer
 
- rails generate scaffold employee employee_id:integer date_hired:date
- wage:decimal person_id:integer postion_id:integer status_id:integer
+ rails generate scaffold employee employee_id:integer date_hired:date wage:decimal{8,2} person_id:integer postion_id:integer status_id:integer
 
  rails generate scaffold employee_has_shift employee_id:integer shift_id:integer
 
@@ -18,7 +16,7 @@
 
  rails generate scaffold position position_id:integer position_name:string
 
- rails generate scaffold product product_id:integer product_name:string product_description:string product_price:decimal
+ rails generate scaffold product product_id:integer product_name:string product_description:string product_price:decimal{8,2}
 
  rails generate scaffold shift shift_id:integer shift_time:string
 

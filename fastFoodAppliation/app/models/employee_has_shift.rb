@@ -1,0 +1,2 @@
+class EmployeeHasShift < ApplicationRecord
+end
