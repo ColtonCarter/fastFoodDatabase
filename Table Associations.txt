@@ -1,0 +1,71 @@
+class person < ApplicationRecord
+  has_many :email
+end
+class person < ApplicationRecord
+  has_many :phone
+end
+class person < ApplicationRecord
+  has_one :employee
+end
+class person < ApplicationRecord
+  has_one :customer
+end
+//
+class customer < ApplicationRecord
+  belongs_to :person
+end
+class customer < ApplicationRecord
+  has_many :order
+end
+//
+class employee < ApplicationRecord
+  belongs_to :person
+end
+class employee < ApplicationRecord
+  has_many :position
+end
+class employee < ApplicationRecord
+  has_many :status
+end
+class employee < ApplicationRecord
+  has_many :order
+end
+class employee < ApplicationRecord
+  has_many :employee_has_shift
+end
+class employee < ApplicationRecord
+  has_many :shift, through: :employee_has_shift
+end
+class employee_has_shift < ApplicationRecord
+  belongs_to :employee
+end
+class shift < ApplicationRecord
+  has_many :employee, through: :employee_has_shift
+end
+//
+class email < ApplicationRecord
+  has_and_belongs_to_many :person
+end
+//
+class phone < ApplicationRecord
+  has_and_belongs_to_many :person
+end
+//
+class position < ApplicationRecord
+  has_and_belongs_to_many :employee
+end
+//
+class status < ApplicationRecord
+  has_and_belongs_to_many :employee
+end
+//
+class order < ApplicationRecord
+  has_many :products, through: :order_has_product
+end
+class order_has_product < ApplicationRecord
+  belongs_to :order
+end
+class product < ApplicationRecord
+  has_many :order, through: :order_has_product
+end
+//
