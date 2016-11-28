@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy, :show, :new, :edit, :create, :update ] #If you are not authorized, you can not do anything in 
+
   # GET /products
   # GET /products.json
   def index

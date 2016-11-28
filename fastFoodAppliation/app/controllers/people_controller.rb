@@ -1,6 +1,8 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy] #If you are not authorized, you can not do anything in 
+
   # GET /people
   # GET /people.json
   def index

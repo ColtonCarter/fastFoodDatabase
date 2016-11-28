@@ -1,6 +1,8 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy, :edit, :update, :new, :create, :set_invoice, :invoice_params] #If you are not authorized, you can not do anything in 
+
   # GET /invoices
   # GET /invoices.json
   def index

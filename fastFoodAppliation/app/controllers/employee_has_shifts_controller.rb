@@ -1,6 +1,8 @@
 class EmployeeHasShiftsController < ApplicationController
   before_action :set_employee_has_shift, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy, :edit, :update, :new, :create, :set_employee_has_shift] #If you are not authorized, you can not do anything in the array
+
   # GET /employee_has_shifts
   # GET /employee_has_shifts.json
   def index

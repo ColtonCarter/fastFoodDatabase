@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'report/index'
+
+  get 'user/index'
+
+  get 'admin/index'
+
+  get 'homepage/index'
+
    root 'welcome#index'
 
   resources :statuses

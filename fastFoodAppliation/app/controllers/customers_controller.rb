@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy, :edit, :update] #If you are not authorized, you can not do anything in the array
   # GET /customers
   # GET /customers.json
   def index

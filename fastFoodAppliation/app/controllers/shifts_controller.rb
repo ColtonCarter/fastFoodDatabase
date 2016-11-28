@@ -1,6 +1,8 @@
 class ShiftsController < ApplicationController
   before_action :set_shift, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy, :show, :new, :edit, :create, :update ] #If you are not authorized, you can not do anything in 
+
   # GET /shifts
   # GET /shifts.json
   def index
