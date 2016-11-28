@@ -1,6 +1,8 @@
 class EmailsController < ApplicationController
   before_action :set_email, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy] #If you are not authorized, you can not do anything in the array
+
   # GET /emails
   # GET /emails.json
   def index

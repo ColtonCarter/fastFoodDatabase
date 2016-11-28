@@ -1,6 +1,8 @@
 class PhonesController < ApplicationController
   before_action :set_phone, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize, :only => [:destroy ] #If you are not authorized, you can not do anything in 
+
   # GET /phones
   # GET /phones.json
   def index
