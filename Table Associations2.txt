@@ -1,0 +1,40 @@
+class person < ApplicationRecord
+  has_one :employee
+  has_one :customer
+  has_many :email
+  has_many :phone
+end
+//
+class customer < ApplicationRecord
+  belongs_to :person
+  has_many :order
+end
+//
+class employee < ApplicationRecord
+  belongs_to :person
+  has_many :order
+  has_many :employee_has_shift
+  has_many :shift, through: :employee_has_shift
+end
+
+//
+class shift < ApplicationRecord
+  has_many :employee, through: :employee_has_shift
+end
+//
+class position < ApplicationRecord
+  has_many :employee
+end
+//
+class status < ApplicationRecord
+  has_many :employee
+end
+//
+class order < ApplicationRecord
+  has_many :product, through: :order_has_product
+end
+//
+class product < ApplicationRecord
+  has_many :order, through: :order_has_product
+end
+//
