@@ -1,15 +1,55 @@
+<br/>
+<%= link_to 'Back', "/homepage/index" , class: "btn btn-default" %>
 <h1>Administrative</h1>
+
 <table>
-<tr>
-<td><a href="#" class="btn btn-success">Create Email</a></td><td><a href="#" class="btn btn-success">Create Phone</a></td><td><a href="#" class="btn btn-success">Create Position</a></td><td><a href="#" class="btn btn-success">Create Person</a></td><td><a href="#" class="btn btn-success">Create Employee</a></td><td><a href="#" class="btn btn-success">Create Status</a></td><td><a href="#" class="btn btn-success">Create Customer</a></td><td><a href="#" class="btn btn-success">Create Invoice</a></td><td><a href="#" class="btn btn-success">Create Employee has Shift</a></td><td><a href="#" class="btn btn-success">Create Shift</a></td><td><a href="#" class="btn btn-success">Create Invoice has Product</a></td><td><a href="#" class="btn btn-success">Create Product</a></td>
-</tr>
-<tr>
-<td><a href="#" class="btn btn-info">Read Email</a></td><td><a href="#" class="btn btn-info">Read Phone</a></td><td><a href="#" class="btn btn-info">Read Position</a></td><td><a href="#" class="btn btn-info">Read Person</a></td><td><a href="#" class="btn btn-info">Read Employee</a></td><td><a href="#" class="btn btn-info">Read Status</a></td><td><a href="#" class="btn btn-info">Read Customer</a></td><td><a href="#" class="btn btn-info">Read Invoice</a></td><td><a href="#" class="btn btn-info">Read Employee has Shift</a></td><td><a href="#" class="btn btn-info">Read Shift</a></td><td><a href="#" class="btn btn-info">Read Invoice has Product</a></td><td><a href="#" class="btn btn-info">Read Product</a></td>
-</tr>
-<tr>
-<td><a href="#" class="btn btn-primary">Edit Email</a></td><td><a href="#" class="btn btn-primary">Edit Phone</a></td><td><a href="#" class="btn btn-primary">Edit Position</a></td><td><a href="#" class="btn btn-primary">Edit Person</a></td><td><a href="#" class="btn btn-primary">Edit Employee</a></td><td><a href="#" class="btn btn-primary">Edit Status</a></td><td><a href="#" class="btn btn-primary">Edit Customer</a></td><td><a href="#" class="btn btn-primary">Edit Invoice</a></td><td><a href="#" class="btn btn-primary">Edit Employee has Shift</a></td><td><a href="#" class="btn btn-primary">Edit Shift</a></td><td><a href="#" class="btn btn-primary">Edit Invoice has Product</a></td><td><a href="#" class="btn btn-primary">Edit Product</a></td>
-</tr>
-<tr>
-<td><a href="#" class="btn btn-danger">Delete Email</a></td><td><a href="#" class="btn btn-danger">Delete phone</a></td><td><a href="#" class="btn btn-danger">Delete Position</a></td><td><a href="#" class="btn btn-danger">Delete Person</a></td><td><a href="#" class="btn btn-danger">Delete Employee</a></td><td><a href="#" class="btn btn-danger">Delete Status</a></td><td><a href="#" class="btn btn-danger">Delete Customer</a></td><td><a href="#" class="btn btn-danger">Delete Invoice</a></td><td><a href="#" class="btn btn-danger">Delete Employee has Shift</a></td><td><a href="#" class="btn btn-danger">Delete Shift</a></td><td><a href="#" class="btn btn-danger">Delete Invoice has Product</a></td><td><a href="#" class="btn btn-danger">Delete Product</a></td>
-</tr>
+    <tr>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Email', "/emails" , class: "btn btn-success" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Phone', "/phones" , class: "btn btn-success" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Position', "/positions" , class: "btn btn-success" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Person', "/people" , class: "btn btn-success" %>
+        </td>
+    </tr>
 </table>
+<br/>
+<table>
+    <tr>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Employee', "/employees" , class: "btn btn-info" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Status', "/statuses" , class: "btn btn-info" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Customer', "/customers" , class: "btn btn-info" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Invoice', "/invoices" , class: "btn btn-info" %>
+        </td>
+    </tr>
+</table>
+<br/>
+<table>
+    <tr>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Employee has Shift', "/employee_has_shifts" , class: "btn btn-primary" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Shift', "/shifts" , class: "btn btn-primary" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Invoice has Product', "/invoice_has_products" , class: "btn btn-primary" %>
+        </td>
+        <td>
+            <%= link_to 'Create/Read/Edit/Delete Product', "/products" , class: "btn btn-primary" %>
+        </td>
+    </tr>
+</table>
+

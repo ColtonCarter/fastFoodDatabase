@@ -9,6 +9,14 @@ before_filter :authorize, :only => [:destroy ] #If you are not authorized, you c
     @phones = Phone.all
   end
 
+   def userCreateEditRead
+    @phones = Phone.all
+  end
+
+    def adminCreateEditRead
+    @phones = Phone.all
+  end
+
   # GET /phones/1
   # GET /phones/1.json
   def show
@@ -16,6 +24,10 @@ before_filter :authorize, :only => [:destroy ] #If you are not authorized, you c
 
   # GET /phones/new
   def new
+    @phone = Phone.new
+  end
+
+  def userNew
     @phone = Phone.new
   end
 
@@ -30,7 +42,7 @@ before_filter :authorize, :only => [:destroy ] #If you are not authorized, you c
 
     respond_to do |format|
       if @phone.save
-        format.html { redirect_to @phone, notice: 'Phone was successfully created.' }
+        format.html { redirect_to "/", notice: 'Phone was successfully created.' }
         format.json { render :show, status: :created, location: @phone }
       else
         format.html { render :new }
@@ -44,7 +56,7 @@ before_filter :authorize, :only => [:destroy ] #If you are not authorized, you c
   def update
     respond_to do |format|
       if @phone.update(phone_params)
-        format.html { redirect_to @phone, notice: 'Phone was successfully updated.' }
+        format.html { redirect_to "/", notice: 'Phone was successfully updated.' }
         format.json { render :show, status: :ok, location: @phone }
       else
         format.html { render :edit }

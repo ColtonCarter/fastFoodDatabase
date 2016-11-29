@@ -1,0 +1,2 @@
+class InvoiceHasProduct < ApplicationRecord
+end

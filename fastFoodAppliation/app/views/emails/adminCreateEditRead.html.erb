@@ -1,0 +1,30 @@
+</br>
+<%= link_to 'Back', "/user/adminIndex" , class: "btn btn-default" %>
+<p id="notice"><%= notice %></p>
+
+<h1>Emails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Email name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emails.each do |email| %>
+      <tr>
+        <td><%= email.email_id %></td>
+        <td><%= email.email_name %></td>
+        <td><%= link_to 'Show', email %></td>
+        <td><%= link_to 'Edit', edit_email_path(email) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Email', new_email_path %>

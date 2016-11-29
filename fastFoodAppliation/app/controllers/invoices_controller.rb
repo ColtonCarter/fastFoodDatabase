@@ -9,6 +9,18 @@ before_filter :authorize, :only => [:destroy, :edit, :update, :new, :create, :se
     @invoices = Invoice.all
   end
 
+  def reportRead
+    @invoices = Invoice.all
+  end
+
+  def userCreateRead
+    @invoices = Invoice.all
+  end
+
+  def adminCreateRead
+    @invoices = Invoice.all
+  end
+
   # GET /invoices/1
   # GET /invoices/1.json
   def show
@@ -30,7 +42,7 @@ before_filter :authorize, :only => [:destroy, :edit, :update, :new, :create, :se
 
     respond_to do |format|
       if @invoice.save
-        format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
+        format.html { redirect_to "/", notice: 'Invoice was successfully created.' }
         format.json { render :show, status: :created, location: @invoice }
       else
         format.html { render :new }

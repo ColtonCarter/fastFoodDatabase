@@ -1,0 +1,33 @@
+</br>
+<%= link_to 'Back', "admin/index" , class: "btn btn-default" %>
+<p id="notice"><%= notice %></p>
+
+<h1>Invoice Has Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Product</th>
+      <th>Product quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoice_has_products.each do |invoice_has_product| %>
+      <tr>
+        <td><%= invoice_has_product.order_id %></td>
+        <td><%= invoice_has_product.product_id %></td>
+        <td><%= invoice_has_product.product_quantity %></td>
+        <td><%= link_to 'Show', invoice_has_product %></td>
+        <td><%= link_to 'Edit', edit_invoice_has_product_path(invoice_has_product) %></td>
+        <td><%= link_to 'Destroy', invoice_has_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invoice Has Product', new_invoice_has_product_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @invoice_has_product.order_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @invoice_has_product.product_id %>
+</p>
+
+<p>
+  <strong>Product quantity:</strong>
+  <%= @invoice_has_product.product_quantity %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_has_product_path(@invoice_has_product) %> |
+<%= link_to 'Back', :back %>

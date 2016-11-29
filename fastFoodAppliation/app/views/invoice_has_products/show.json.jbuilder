@@ -1,0 +1,1 @@
+json.partial! "invoice_has_products/invoice_has_product", invoice_has_product: @invoice_has_product

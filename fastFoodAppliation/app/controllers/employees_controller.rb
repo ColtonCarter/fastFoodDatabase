@@ -8,6 +8,9 @@ before_filter :authorize, :only => [:destroy, :edit, :update, :new, :create, :se
     @employees = Employee.all
   end
 
+  def reportRead
+    @employees = Employee.all
+  end
   # GET /employees/1
   # GET /employees/1.json
   def show

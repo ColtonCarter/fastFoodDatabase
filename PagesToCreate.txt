@@ -1,0 +1,80 @@
+need to link all buttons
+need to make:
+adminUserIndex.html.erb done
+
+ //this will be just the index for all of the admin functions. done
+	Email
+	Phone
+	Position
+	Person
+	Employee
+	Status
+	Customer
+	Invoice
+	EmployeehasShift
+	Shift
+	InvoiceHasProduct
+	Product
+
+
+
+need to add new files to routes, and define them in the controller
+
+
+reportRead*.html.erb
+	persons done
+	employee done
+	invoices done
+	products done
+
+userCreateEditRead*.html.erb
+	person buttons
+	phone buttons
+	email buttons
+	
+
+userCreateRead
+	invoice buttons
+
+usercreate
+	invoice has product buttons
+	customer buttons
+
+
+userRead*.html.erb
+	product
+
+adminCreateEditRead*.html.erb
+	person
+	phone
+	email
+	
+
+adminCreateRead
+	invoice
+
+admincreate
+	invoice has product
+	customer done
+
+
+adminRead*.html.erb
+	product done
+
+need to add create/edits for all user pages
+
+
+need to create  copy new dfinition to userNew,  edit the redirect to go back on create. Create a userNew.html.erb. copy old new and edit it. add to routes userNew
+make a userEdit, and then route all edit stuff back to /
+userCreate
+	person done
+	phone done
+	email done
+	invoice
+	invoice has product
+	
+
+userEdit
+	person done
+	phone done
+	email done

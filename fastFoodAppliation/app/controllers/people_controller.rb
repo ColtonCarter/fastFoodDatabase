@@ -9,6 +9,19 @@ before_filter :authorize, :only => [:destroy] #If you are not authorized, you ca
     @people = Person.all
   end
 
+def reportRead
+  @people = Person.all
+end
+
+def userCreateEditRead
+  @people = Person.all
+end
+
+def adminCreateEditRead
+  @people = Person.all
+end
+  
+
   # GET /people/1
   # GET /people/1.json
   def show
@@ -19,8 +32,15 @@ before_filter :authorize, :only => [:destroy] #If you are not authorized, you ca
     @person = Person.new
   end
 
+  def userNew
+    @person = Person.new
+  end
+
   # GET /people/1/edit
   def edit
+  end
+
+  def userEdit
   end
 
   # POST /people
@@ -30,21 +50,23 @@ before_filter :authorize, :only => [:destroy] #If you are not authorized, you ca
 
     respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
+        format.html { redirect_to '/', notice: 'Person was successfully created.' }
         format.json { render :show, status: :created, location: @person }
       else
-        format.html { render :new }
+        format.html { render :userNew }
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
   end
+
+ 
 
   # PATCH/PUT /people/1
   # PATCH/PUT /people/1.json
   def update
     respond_to do |format|
       if @person.update(person_params)
-        format.html { redirect_to @person, notice: 'Person was successfully updated.' }
+        format.html { redirect_to '/', notice: 'Person was successfully updated.' }
         format.json { render :show, status: :ok, location: @person }
       else
         format.html { render :edit }

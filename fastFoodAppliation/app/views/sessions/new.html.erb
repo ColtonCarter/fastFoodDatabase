@@ -4,9 +4,15 @@
 
 <form class="form-horizontal">
   <fieldset>
+  <div>
+  
+  </div>
    <p>
-   Please sign in!
+   Please sign in! <br/> or
    </p>
+    <div>
+  <%= link_to 'Continue to user menu', "/user/index" , class: "btn btn-default" %>
+  </div>
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
       <div class="col-lg-10">

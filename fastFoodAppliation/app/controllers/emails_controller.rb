@@ -9,6 +9,14 @@ before_filter :authorize, :only => [:destroy] #If you are not authorized, you ca
     @emails = Email.all
   end
 
+  def userCreateEditRead
+    @emails = Email.all
+  end
+
+  def adminCreateEditRead
+    @emails = Email.all
+  end
+
   # GET /emails/1
   # GET /emails/1.json
   def show
@@ -30,7 +38,7 @@ before_filter :authorize, :only => [:destroy] #If you are not authorized, you ca
 
     respond_to do |format|
       if @email.save
-        format.html { redirect_to @email, notice: 'Email was successfully created.' }
+        format.html { redirect_to "/", notice: 'Email was successfully created.' }
         format.json { render :show, status: :created, location: @email }
       else
         format.html { render :new }
@@ -44,7 +52,7 @@ before_filter :authorize, :only => [:destroy] #If you are not authorized, you ca
   def update
     respond_to do |format|
       if @email.update(email_params)
-        format.html { redirect_to @email, notice: 'Email was successfully updated.' }
+        format.html { redirect_to "/", notice: 'Email was successfully updated.' }
         format.json { render :show, status: :ok, location: @email }
       else
         format.html { render :edit }

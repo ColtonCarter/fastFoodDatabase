@@ -9,6 +9,18 @@ before_filter :authorize, :only => [:destroy, :show, :new, :edit, :create, :upda
     @products = Product.all
   end
 
+  def reportRead
+    @products = Product.all
+  end
+
+  def userRead
+    @products = Product.all
+  end
+
+  def adminRead
+    @products = Product.all
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show

@@ -8,6 +8,14 @@ before_filter :authorize, :only => [:destroy, :edit, :update] #If you are not au
     @customers = Customer.all
   end
 
+  def userCreate
+    @customers = Customer.all
+  end
+
+  def adminCreate
+    @customers = Customer.all
+  end
+
   # GET /customers/1
   # GET /customers/1.json
   def show

@@ -1,0 +1,1 @@
+json.array! @invoice_has_products, partial: 'invoice_has_products/invoice_has_product', as: :invoice_has_product

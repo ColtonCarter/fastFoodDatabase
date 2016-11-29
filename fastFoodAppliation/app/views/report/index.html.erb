@@ -1,6 +1,19 @@
+<br/>
+<%= link_to 'Back', "/homepage/index" , class: "btn btn-default" %>
 <h1>Reporting</h1>
 <table>
-<tr>
-<td><a href="#" class="btn btn-info">Read Persons</a></td><td><a href="#" class="btn btn-info">Read Employees</a></td><td><a href="#" class="btn btn-info">Read Invoices</a></td><td><a href="#" class="btn btn-info">Read Products</a></td>
-</tr>
+    <tr>
+        <td>   
+            <%= link_to 'Read People', "/people/reportRead" , class: "btn btn-info" %>
+        </td>
+        <td>
+            <%= link_to 'Read Employees', "/employees/reportRead" , class: "btn btn-info" %>
+        </td>
+        <td>
+            <%= link_to 'Read Invoices', "/invoices/reportRead" , class: "btn btn-info" %>
+        </td>
+        <td>
+             <%= link_to 'Read Products', "/products/reportRead" , class: "btn btn-info" %>
+        </td>
+    </tr>
 </table>
