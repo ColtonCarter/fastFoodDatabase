@@ -1,26 +1,29 @@
-<h1>Login</h1>
+<h1>Welcome to the Fast Food Homepage! <br>Login</h1>
 <%= form_tag '/login' do %>
+
+
 <form class="form-horizontal">
   <fieldset>
    <p>
    Please sign in!
    </p>
     <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
       <div class="col-lg-10">
-          <label for="inputusername" class="col-lg-2 control-label">Email</label>
-        <%= text_field_tag :email %><br>
-    
+        <%= text_field_tag :email %>
+      </div>
+    </div>
+    <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
         <%= password_field_tag :password %>
+        <div class="checkbox">
+        </div>
       </div>
     </div>
      <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
        <%= submit_tag "Submit", class: "btn btn-primary" %>
       </div>
-    </div>
-      
-
-    </fieldset>
-</form>
-<% end %>
+      </div></fieldset></form>
+   <% end %>
