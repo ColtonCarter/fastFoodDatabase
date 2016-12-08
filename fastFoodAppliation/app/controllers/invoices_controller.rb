@@ -42,7 +42,7 @@ before_filter :authorize, :only => [:destroy, :edit, :update, :new, :create, :se
 
     respond_to do |format|
       if @invoice.save
-        format.html { redirect_to "/", notice: 'Invoice was successfully created.' }
+        format.html { redirect_to "/sessions/new", notice: 'Invoice was successfully created.' }
         format.json { render :show, status: :created, location: @invoice }
       else
         format.html { render :new }

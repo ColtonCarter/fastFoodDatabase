@@ -42,7 +42,7 @@ before_filter :authorize, :only => [:destroy ] #If you are not authorized, you c
 
     respond_to do |format|
       if @phone.save
-        format.html { redirect_to "/", notice: 'Phone was successfully created.' }
+        format.html { redirect_to "/sessions/new", notice: 'Phone was successfully created.' }
         format.json { render :show, status: :created, location: @phone }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ before_filter :authorize, :only => [:destroy ] #If you are not authorized, you c
   def update
     respond_to do |format|
       if @phone.update(phone_params)
-        format.html { redirect_to "/", notice: 'Phone was successfully updated.' }
+        format.html { redirect_to "/sessions/new", notice: 'Phone was successfully updated.' }
         format.json { render :show, status: :ok, location: @phone }
       else
         format.html { render :edit }

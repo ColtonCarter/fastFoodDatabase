@@ -54,9 +54,9 @@ Rails.application.routes.draw do
   get 'emails/userEdit'
   get 'invoices/userNew'
   get 'invoice_has_products/userNew'
+get 'sessions/new'
 
-
-   root 'homepage#index'
+   root 'front_page#index'
 
 
      # These routes will be for signup. The first renders a form in the browse, the second will 

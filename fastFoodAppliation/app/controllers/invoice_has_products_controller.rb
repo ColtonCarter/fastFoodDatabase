@@ -36,7 +36,7 @@ class InvoiceHasProductsController < ApplicationController
 
     respond_to do |format|
       if @invoice_has_product.save
-        format.html { redirect_to "/", notice: 'Invoice has product was successfully created.' }
+        format.html { redirect_to "/sessions/new", notice: 'Invoice has product was successfully created.' }
         format.json { render :show, status: :created, location: @invoice_has_product }
       else
         format.html { render :new }
