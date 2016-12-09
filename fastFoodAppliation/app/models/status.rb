@@ -1,3 +1,3 @@
 class Status < ApplicationRecord
-    has_many :employee
+ #   has_many :employee
 end
