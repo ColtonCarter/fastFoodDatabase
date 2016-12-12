@@ -1,34 +1,24 @@
 <br/>
 <%= link_to 'Back', "/sessions/new" , class: "btn btn-default" %>
 <h1>User</h1>
-<table>
-    <tr>
-        <td>
-            <%= link_to 'Create/Edit/Read Person', "/people/userCreateEditRead" , class: "btn btn-success" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Edit/Read Phone', "/phones/userCreateEditRead" , class: "btn btn-success" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Edit/Read Email', "/emails/userCreateEditRead" , class: "btn btn-success" %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <%= link_to 'Create/Read Invoice', "/invoices/userCreateRead" , class: "btn btn-primary" %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <%= link_to 'Create Invoice has Product', "/invoice_has_products/userCreate" , class: "btn btn-info" %>
-        </td>
-        <td>
-            <%= link_to 'Create Customer', "/customers/userCreate" , class: "btn btn-info" %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <%= link_to 'Read Product', "/products/userRead" , class: "btn btn-default" %>
-        </td>
-    </tr>
-</table>
+
+<div class="well well-sm">
+    <span class="label label-default">People and their Information</span><br>
+     <%= link_to 'Person', "/people/userCreateEditRead" , class: "btn btn-warning" %>
+            <%= link_to 'Phone', "/phones/userCreateEditRead" , class: "btn btn-primary" %>
+       
+            <%= link_to 'Email', "/emails/userCreateEditRead" , class: "btn btn-info" %>
+</div>
+<div class="well well-sm">
+    <span class="label label-default">Invoice Information</span><br>
+ <%= link_to 'Invoice has Product', "/invoice_has_products/userCreate" , class: "btn btn-info" %>
+    <%= link_to 'Invoice', "/invoices/userCreateRead" , class: "btn btn-primary" %>
+</div>
+<div class="well well-sm">
+    <span class="label label-default">Customer</span><br>
+    <%= link_to 'Customer', "/customers/userCreate" , class: "btn btn-success" %>
+    </div>
+<div class="well well-sm">
+    <span class="label label-default">Product Specifically</span><br>
+     <%= link_to 'Read Product', "/products/userRead" , class: "btn btn-primary" %>
+    </div>

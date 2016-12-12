@@ -1,55 +1,25 @@
 <br/>
 <%= link_to 'Back', "/sessions/new" , class: "btn btn-default" %>
 <h1>Administrative</h1>
-
-<table>
-    <tr>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Email', "/emails" , class: "btn btn-success" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Phone', "/phones" , class: "btn btn-success" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Position', "/positions" , class: "btn btn-success" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Person', "/people" , class: "btn btn-success" %>
-        </td>
-    </tr>
-</table>
 <br/>
-<table>
-    <tr>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Employee', "/employees" , class: "btn btn-info" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Status', "/statuses" , class: "btn btn-info" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Customer', "/customers" , class: "btn btn-info" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Invoice', "/invoices" , class: "btn btn-info" %>
-        </td>
-    </tr>
-</table>
-<br/>
-<table>
-    <tr>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Employee has Shift', "/employee_has_shifts" , class: "btn btn-primary" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Shift', "/shifts" , class: "btn btn-primary" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Invoice has Product', "/invoice_has_products" , class: "btn btn-primary" %>
-        </td>
-        <td>
-            <%= link_to 'Create/Read/Edit/Delete Product', "/products" , class: "btn btn-primary" %>
-        </td>
-    </tr>
-</table>
-
+<div class="well well-sm">
+    <span class="label label-default">Accessing Customer Information</span><br>
+    <%= link_to 'Customer', "/customers" , class: "btn btn-info" %>
+    <%= link_to 'Delete Email', "/emails" , class: "btn btn-primary" %>
+    <%= link_to 'Phone', "/phones" , class: "btn btn-danger" %>
+    <%= link_to 'Position', "/positions" , class: "btn btn-success" %>
+    <%= link_to 'Person', "/people" , class: "btn btn-default" %>
+</div><br><br>
+<div class="well well-sm">
+    <span class="label label-default">Accessing Employee Information</span><br>
+    <%= link_to 'Employee', "/employees" , class: "btn btn-info" %>
+    <%= link_to 'Employee Status', "/statuses" , class: "btn btn-danger" %>
+    <%= link_to 'Employee has Shift', "/employee_has_shifts" , class: "btn btn-success" %>
+    <%= link_to 'Shifts', "/shifts" , class: "btn btn-primary" %>
+</div><br><br>
+<div class="well well-sm">
+    <span class="label label-default">Accessing Products and Invoices Information</span><br>
+    <%= link_to 'Invoice', "/invoices" , class: "btn btn-default" %>
+    <%= link_to 'Invoice has Product', "/invoice_has_products" , class: "btn btn-danger" %>
+    <%= link_to 'Product', "/products" , class: "btn btn-success" %>
+</div><br><br>
