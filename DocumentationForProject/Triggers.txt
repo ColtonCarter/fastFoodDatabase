@@ -1,0 +1,83 @@
+
+
+DROP TRIGGER IF EXISTS employee_trigger;
+DELIMITER //
+CREATE TRIGGER employee_trigger
+BEFORE UPDATE ON Employees
+FOR EACH ROW
+
+	BEGIN
+		IF NEW.position_id <> OLD.position_id THEN
+			SET NEW.wage = OLD.wage * 1.25;
+		END IF;
+	END //
+
+DELIMITER ;
+
+
+DROP TRIGGER IF EXISTS product_trigger;
+DELIMITER //
+
+
+CREATE TRIGGER product_trigger BEFORE UPDATE on Products
+FOR EACH ROW
+
+	BEGIN
+		IF NEW.product_Name <> OLD.product_name THEN
+			SET NEW.product_name = OLD.product_name;
+		END IF;
+	END //
+
+DELIMITER ;
+
+
+DROP TRIGGER IF EXISTS order_has_product_trigger;
+DELIMITER //
+CREATE TRIGGER order_has_product_trigger BEFORE UPDATE ON Invoice_has_Products
+FOR EACH ROW
+	BEGIN
+		IF product_quantity <= 0 THEN SET
+		NEW.product_quantity = 10;
+	END IF;
+END //
+DELIMITER ;
+
+
+
+
+
+DROP TRIGGER IF EXISTS invoice_trigger;
+DELIMITER //
+CREATE TRIGGER invoice_trigger BEFORE UPDATE on Invoices
+FOR EACH ROW
+
+	BEGIN
+		IF NEW.customer_id != OLD.customer_id THEN
+			SET NEW.customer_id = OLD. customer_id;
+		END IF;
+		IF NEW.invoice_time != OLD.invoice_time THEN
+			SET NEW.invoice_time = OLD. invoice_time;
+		END IF;
+
+		IF NEW.employee_id != OLD.employee_id THEN
+			SET NEW.employee_id = OLD. employee_id;
+		END IF;
+
+	END //
+
+DELIMITER ;
+
+
+DELIMITER //
+DROP TRIGGER IF EXISTS customer_trigger;
+
+CREATE TRIGGER customer_trigger BEFORE UPDATE on Customers
+FOR EACH ROW
+
+	BEGIN
+		IF NEW.person_id != OLD.person_id THEN
+			SET NEW.person_id = OLD. person_id;
+		END IF;
+	END //
+
+DELIMITER ;
